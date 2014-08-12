@@ -1,3 +1,5 @@
+List1 = ["cinema","host","aba","train", "god"]
+List2 = ["iceman","shot","bab","rain", "dog"]
 
 def check_anagrams(first_words, second_words):
     # Write your code here
@@ -5,24 +7,35 @@ def check_anagrams(first_words, second_words):
     sortedList2 = []
 
     for word in first_words:
-        temp = word.split()
-        temp2 = temp.sort()
-        print temp2
-        sortedWord = temp2.join(',')
-        print sortedWord
-        sortedList1.append(sortedWord)
-    
+        split = list(word)
+        # print split
+        split.sort()
+        # print split
+        sortedWord = split
+        # print sortedWord
+        new_word = "".join(sortedWord)
+        # print new_word
+        sortedList1.append(new_word)
+
     for word in second_words:
-        temp = word.split()
-        temp2 = temp.sort()
-        sortedWord = temp2.join(',')
-        sortedList2.append(sortedWord)
+        split = list(word)
+        # print split
+        split.sort()
+        # print split
+        sortedWord = split
+        # print sortedWord
+        new_word = "".join(sortedWord)
+        # print new_word
+        sortedList2.append(new_word)
+
+    print sortedList1
+    print sortedList2
     
     for i in sortedList1:
         if i in sortedList2:
-            print 1
+            print "1 - anagram"
         else:
-            print 0
+            print "0 - not anagram"
 
 
-check_anagrams(["cinema","host","aba","train"], ["iceman","shot","bab","rain"])
+check_anagrams(List1,List2)
